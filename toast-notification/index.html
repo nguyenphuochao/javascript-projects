@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <title>Toast Notification</title>
+</head>
+
+<body>
+    <div class="buttons">
+        <button onclick="showToast(successMsg)">Success</button>
+        <button onclick="showToast(errorMsg)">Error</button>
+        <button onclick="showToast(invalidMsg)">Invalid</button>
+    </div>
+
+    <div id="toastBox"></div>
+
+    <script>
+
+        let toastBox = document.getElementById('toastBox');
+        let successMsg = '<i class="fa-solid fa-circle-check"></i> Successfully message';
+        let errorMsg = '<i class="fa-solid fa-circle-xmark"></i> Error message';
+        let invalidMsg = '<i class="fa-solid fa-circle-exclamation"></i> Invalid message';
+
+        function showToast(msg) {
+            let toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML = msg;
+            toastBox.appendChild(toast);
+
+            // check icon color
+            if (msg.includes("Error")) {
+                toast.classList.add("error")
+            }
+            if (msg.includes("Invalid")) {
+                toast.classList.add("invalid")
+            }
+
+            setTimeout(() => {
+                toast.remove()
+            }, 2000);
+        }
+
+    </script>
+
+</body>
+
+</html>
