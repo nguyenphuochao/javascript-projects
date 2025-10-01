@@ -5,6 +5,11 @@
     font-family: 'poppins', sans-serif;
 }
 
+:root {
+    --back-color: black;
+    --white-color: white;
+}
+
 body {
     background: linear-gradient(135deg, #f6f9fd, #C0C4CD);
     min-height: 100vh;
