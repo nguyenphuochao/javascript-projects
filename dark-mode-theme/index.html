@@ -33,7 +33,7 @@
                         <a href="#">HIRE ME</a>
                     </li>
                     <li>
-                        <img src="images/moon.png" width="50">
+                        <img src="images/moon.png" width="50" id="iconToggleDark">
                     </li>
                 </ul>
             </nav>
@@ -57,6 +57,22 @@
         </main>
 
     </div>
+
+    <script>
+
+        const iconToggleDark = document.getElementById("iconToggleDark");
+
+        iconToggleDark.onclick = function () {
+            if (document.body.classList.contains("dark-theme")) {
+                document.body.classList.remove("dark-theme")
+                iconToggleDark.src = "images/moon.png";
+            } else {
+                document.body.classList.add("dark-theme")
+                iconToggleDark.src = "images/sun.png";
+            }
+        }
+
+    </script>
 
 </body>
 

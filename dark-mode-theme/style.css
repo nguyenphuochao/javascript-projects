@@ -6,13 +6,19 @@
 }
 
 :root {
-    --back-color: black;
-    --white-color: white;
+    --dark-color: black;
+    --light-color: white;
 }
 
 body {
     background: linear-gradient(135deg, #f6f9fd, #C0C4CD);
     min-height: 100vh;
+}
+
+body.dark-theme {
+    background: black;
+    --dark-color: white;
+    --light-color: black;
 }
 
 .container {
@@ -40,7 +46,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--dark-color);
 }
 
 .row {
@@ -54,6 +60,7 @@ nav ul li a {
 }
 
 .banner h1 {
+    color: var(--dark-color);
     font-size: 42px
 }
 
@@ -62,14 +69,15 @@ nav ul li a {
 }
 
 .banner p {
+    color: var(--dark-color);
     margin-top: 20px;
 }
 
 .banner button {
     margin-top: 20px;
-    padding: 5px;
-    color: white;
-    background: black;
+    padding: 5px 10px;
+    color: var(--light-color);
+    background: var(--dark-color);
     border-radius: 5px;
 }
 
