@@ -6,8 +6,8 @@
 }
 
 :root {
-    --dark-color: black;
-    --light-color: white;
+    --dark-color: #000;
+    --light-color: #FFF;
 }
 
 body {
@@ -15,10 +15,10 @@ body {
     min-height: 100vh;
 }
 
-body.dark-theme {
-    background: black;
-    --dark-color: white;
-    --light-color: black;
+.dark-theme {
+    background: #000;
+    --dark-color: #FFF;
+    --light-color: #000;
 }
 
 .container {
