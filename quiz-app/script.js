@@ -16,6 +16,15 @@ const questions = [
             { text: "Brown", correct: false },
             { text: "Gray", correct: false }
         ]
+    },
+    {
+        question: "What is 3 + 2?",
+        answers: [
+            { text: "4", correct: false },
+            { text: "5", correct: true },
+            { text: "6", correct: false },
+            { text: "7", correct: false }
+        ]
     }
 ];
 
