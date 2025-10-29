@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Crypto Currency Web App - Easy Tutorials</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Market</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">White Papers</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <a href="#" class="btn">EN</a>
+        </nav>
+
+        <div class="content">
+            <h1>BUY & <br> SELL <span>Crypto</span></h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint cum at
+                <br> corporis dolores quaerat sequi.
+            </p>
+            <a href="#" class="btn">EXPLORE MORE</a>
+        </div>
+
+        <div class="coin-list">
+            <div class="coin">
+                <img src="images/bitcoin.png">
+                <div>
+                    <h3>$<span id="bitcoin"></span></h3>
+                    <p>Bitcoin</p>
+                </div>
+            </div>
+            <div class="coin">
+                <img src="images/ethereum.png">
+                <div>
+                    <h3>$<span id="ethereum"></span></h3>
+                    <p>Ethereum</p>
+                </div>
+            </div>
+            <div class="coin">
+                <img src="images/dogecoin.png">
+                <div>
+                    <h3>$<span id="dogecoin"></span></h3>
+                    <p>Dogecoin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var bitcoin = document.getElementById("bitcoin");
+        var ethereum = document.getElementById("ethereum");
+        var dogecoin = document.getElementById("dogecoin");
+
+        var setting = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cdogecoin&vs_currencies=usd",
+            "method": "GET",
+            "headers": {}
+        }
+
+        $.ajax(setting).done(function (response) {
+            bitcoin.innerHTML = response.bitcoin.usd;
+            ethereum.innerHTML = response.ethereum.usd;
+            dogecoin.innerHTML = response.dogecoin.usd;
+        });
+
+
+    </script>
+
+</body>
+
+</html>
